@@ -4827,13 +4827,6 @@ public Result<String> update(@RequestBody EmployeeDTO employeeDTO) {
 - 对通用日志组件进行统一封装，避免开发人员在业务代码中随意输出敏感参数；
 - 对历史日志进行排查与清理，防止敏感数据长期留存在日志平台之中。
 
-**示例思路：**
-
-```java
-log.info("用户下单，请求参数：userId={}, orderAmount={}", userId, amount);
-// 禁止：log.info("用户下单，ordersSubmitDTO={}", ordersSubmitDTO);
-```
-
 通过该措施，可降低认证信息、支付信息及个人信息经由日志链路二次泄露的风险。
 
 
